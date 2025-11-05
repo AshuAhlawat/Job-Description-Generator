@@ -103,7 +103,7 @@ if submit:
     
     device = torch.device("cpu")
     model = GPTModel(CONFIG).to(device)
-    model.load_state_dict(torch.load("./archive/job_model.pth"), device)
+    model.load_state_dict(torch.load("./archive/job_model.pth", map_location=device))
 
     output = generate(model, query, max_new_tokens=60, context_size=256, temperature=temp, top_k=top_k, device = torch.device("cpu"))
     output = output.split(":",1)[-1]
