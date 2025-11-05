@@ -1,0 +1,6 @@
+pandas
+streamlit
+torch
+tiktoken
+requests
+numpy
